@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>update user</title>
+</head>
+<body>
+
+    <div class="userUpdate">
+        <h1>Update user</h1>
+        <form action="/updateUSer/<%= data2._id%>" method="post">
+            <label  for="name">User Name</label>
+            <input type="text" name="uNmae" placeholder="update your name" value="<%= data2.name %>">
+
+            <label for="name">Role</label>
+            <input type="text" name="uRole" placeholder="update your role" value="<%= data2.role %>">
+            <button type="submit" >Update</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>

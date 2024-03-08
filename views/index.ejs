@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>mini CRUD</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="userAdd">
+        <h1>Add user</h1>
+        <form action="/post" method="post">
+            <label for="name">User Name</label>
+            <input id="name"   type="text" name="uNmae" placeholder="enter your name">
+
+            <label for="name">Role</label>
+            <input id="role"  type="text" name="role" placeholder="enter your role">
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+    
+    <div class="userTable">
+        <h1>Users Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+            <tbody>
+              
+                <% data.forEach(data => { %>
+                    <tr>
+                        <td><%= data.name %></td>
+                        <td><%= data.role %></td>
+                        <td><a href="/delete/<%= data._id%>">Delete</a></td>
+                        <td><a href="/update/<%= data._id%>">Update</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
